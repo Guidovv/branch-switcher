@@ -1,0 +1,156 @@
+#branch-switcher {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	backdrop-filter: blur(12px);
+	background-color: rgba(0, 0, 0, .2);
+}
+
+#branch-switcher form {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	color: #000;
+	font-size: 20px;
+
+	width: 50vw;
+	min-width: 350px;
+}
+#branch-switcher form:before {
+	content: 'Change branch';
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	color: #000;
+	font-size: 45px;
+
+	transform: translateY(-120%);
+}
+#branch-switcher form[data-error]:after {
+	content: attr(data-error);
+
+	color: #c00;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+#branch-switcher select {
+    width: 100%;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border: 2px solid #fff;
+
+    font-size: 24px;
+}
+#branch-switcher select:hover {
+	border-color: #000;
+}
+
+#branch-switcher details {
+	padding: 15px 0;
+}
+#branch-switcher details summary {
+	outline: none;
+	cursor: pointer;
+}
+#branch-switcher details ul {
+	margin-top: 0;
+}
+#branch-switcher details li {
+	position: relative;
+	list-style-type: none;
+}
+#branch-switcher details li:last-child::before {
+	content: '$';
+
+	position: absolute;
+    top: 12px;
+    left: 8px;
+
+    color: #0057bd;
+    font-size: .7em;
+    font-weight: bold;
+}
+#branch-switcher details li:last-child::after {
+	content: 'Will be run last';
+
+	font-size: 12px;
+	font-style: italic;
+
+	opacity: .85;
+	display: block;
+}
+#branch-switcher details label {
+	cursor: pointer;
+}
+#branch-switcher details [type="text"] {
+	color: #fff;
+	font-size: .9em;
+
+	width: 100%;
+	margin-top: 6px;
+	padding: 5px 8px 5px 25px;
+	border: 1px solid rgba(0, 0, 0, .2);
+	background-color: rgba(0, 0, 0, .1);
+}
+#branch-switcher details [type="text"]::-webkit-input-placeholder {
+  color: #fff;
+}
+#branch-switcher details [type="text"]:-ms-input-placeholder {
+  color: #fff;
+}
+#branch-switcher details [type="text"]::placeholder {
+  color: #fff;
+}
+
+#branch-switcher input[type="submit"] {
+	line-height: 1;
+	font-size: 18px;
+	font-weight: bold;
+
+	display: block;
+	cursor: pointer;
+	margin-top: 10px;
+	border: 2px solid #fff;
+	padding: 8px 40px 8px 30px;
+
+	background-size: 14px auto;
+	background-repeat: no-repeat;
+	background-position: right 10px center;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M22 12l-20 12 5-12-5-12z'/%3E%3C/svg%3E");
+}
+#branch-switcher input[type="submit"]:not([disabled]):hover {
+	border-color: #000;
+}
+
+#branch-switcher .notice {
+	color: #000;
+
+	display: none;
+	margin: 0 0 20px;
+	transition: opacity .5s 1s;
+}
+#branch-switcher .notice ul {
+	margin: 0;
+	padding-left: 10px;
+}
+#branch-switcher .notice ul.finished li:first-child {
+	color: #069211;
+}
+#branch-switcher .notice li {
+	font-size: .8em;
+	list-style-type: none;
+}
+#branch-switcher .notice li span {
+	color: #000;
+	font-weight: bold;
+}
+

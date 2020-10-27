@@ -1,0 +1,37 @@
+{
+    "name": "guidovv/branch-switcher",
+    "description": "A package to switch between branches while in the browser",
+    "keywords": [
+        "git",
+        "branch",
+        "checkout"
+    ],
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "authors": [
+        {
+            "name": "Guido van Vilsteren",
+            "email": "guidovanvil@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "BranchSwitcher\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "require": {
+        "php": "^7.3",
+        "laravel/framework": "^8.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "BranchSwitcher\\BranchSwitcherServiceProvider"
+            ]
+        }
+    }
+}
